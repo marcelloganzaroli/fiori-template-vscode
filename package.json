@@ -10,15 +10,29 @@
     "karma-ci": "karma start karma-ci.conf.js",
     "watch": "start-server-and-test start http://localhost:8080 karma",
     "test": "npm run lint && rimraf coverage && start-server-and-test start http://localhost:8080 karma-ci",
-    "build": "rimraf dist && ui5 build --a"
+    "build": "rimraf dist && ui5 build --a",
+    "babel_build": "babel src/ -d webapp/ --copy-files",
+    "dev-serve": "npm run babel_build && concurrently \"npm run babel_build -- --watch\" \"npm run start\" --kill-others"
   },
   "dependencies": {
+    "@openui5/sap.f": "^1.60.0",
     "@openui5/sap.m": "^1.60.0",
     "@openui5/sap.ui.core": "^1.60.0",
-    "@openui5/themelib_sap_belize": "^1.60.0"
+    "@openui5/themelib_sap_belize": "^1.60.0",
+    "lodash": "^4.17.11",
+    "moment": "^2.24.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.3.4",
     "@ui5/cli": "^1.2.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-preset-transform-ui5": "^7.0.0-rc.10",
+    "babel-watch": "^7.0.0",
+    "concurrently": "^4.1.0",
     "eslint": "^4.19.1",
     "karma": "^4.0.0",
     "karma-chrome-launcher": "^2.2.0",
