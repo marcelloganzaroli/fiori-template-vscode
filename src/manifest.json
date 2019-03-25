@@ -5,13 +5,17 @@
 		"type": "application",
 		"dataSources": {
 			"invoiceRemote": {
-			  "uri": "https://services.odata.org/V2/Northwind/Northwind.svc/",
-			  "type": "OData",
-			  "settings": {
-				"odataVersion": "2.0"
-			  }
+				"uri": "https://services.odata.org/V2/Northwind/Northwind.svc/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0"
+				}
 			}
-		  }		
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"fullWidth": false
 	},
 	"sap.ui5": {
 		"dependencies": {
@@ -40,7 +44,7 @@
 			},
 			"invoice": {
 				"dataSource": "invoiceRemote"
-			  }
+			}
 		},
 		"resources": {
 			"css": [
